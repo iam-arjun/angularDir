@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">DemoAngular &nbsp;</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active" *ngIf="home_status">
+        <a class="nav-link active btn btn-primary text-light" routerLink="/">Home</a>
+      </li>
+      <li class="nav-item" *ngIf="user_status">
+        <a class="nav-link text-warning text-capitalize" routerLink="/username">add user</a>
+      </li>
+      <li class="nav-item" *ngIf="products_status">
+        <a class="nav-link text-warning text-capitalize" routerLink="/products">products</a>
+      </li>
+      <li class="nav-item" *ngIf="gallery_status">
+        <a class="nav-link text-warning text-capitali ze" routerLink="/gallery">gallery</a>
+      </li>
+      <li class="nav-item" *ngIf='gallery_item_status'>
+        <a class="nav-link text-warning text-capitalize" routerLink="/gallery" >BackToGallery</a>
+      </li>
+
+    </ul>
+  </div>
+</nav> 

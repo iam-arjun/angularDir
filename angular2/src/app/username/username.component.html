@@ -1,0 +1,85 @@
+<app-navbar></app-navbar>
+
+
+<section class="add_user mt-4">
+    <div class="container user_contain mt-5">
+
+        <div class="form-group">
+
+            <input type="text" class="form-control" id="Username" placeholder="ADD" #input_user>
+            <a type="button" class="btn btn-primary" (click)="add_user(input_user)"> {{edit_status?'Update':'ADD'}}</a>
+        </div>
+
+
+        <div class="table_data mt-3">
+            <ul>
+                <li *ngFor="let user of user_array, index as i">
+                    <span> {{user}}</span>
+
+                    <button class="btn btn-danger" >Remove</button>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</section>
+
+<section class="select_any">
+    <div class="container select_product">
+        <!-- <select class="bg-primary text-light w-50" (change)="display($event)">
+            <option value="Laptop" class="text-light">laptop</option>
+            <option value="Mobile" class="text-light">mobile</option>
+            <option value="Television" class="text-light">tv</option>
+        </select> -->
+
+        <div [ngSwitch]="selected_product">
+            <h1 *ngSwitchCase="'Laptop'" appCustomStyle>Laptop</h1>
+            <h1 *ngSwitchCase="'Mobile'">Mobile</h1>
+            <h1 *ngSwitchCase="'Television'">Television</h1>
+        </div>
+    </div>
+</section>
+
+
+<div class="container mt-5">
+    <div class="form-group mb-4">
+        <input type="text" placeholder="search" class="form-control" [(ngModel)]="searchValue">
+    </div>
+    <div class="spinner" *ngIf="spinner_status">
+        <div class="spinner-border text-primary" role="status">
+
+        </div>
+        <span class="sr-only">Loading...</span>
+    </div>
+
+    <table class="table table-dark mb-5" *ngIf="!spinner_status">
+
+
+        <thead>
+            <tr>
+                <th scope="col">Sno</th>
+                <th scope="col">FirstName</th>
+                <th scope="col">LastName</th>
+                <th scope="col">PhoneNum</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let info of infoArr, index as i  ">
+                <th scope="row">{{info.sno}}</th>
+                <td>{{info.firstname}}</td>
+                <td>{{info.lastname}}</td>
+                <td>{{info.phonenum}}</td>
+                <td (click)="edit_user(i)"><i class="fas fa-edit text-warning"></i></td>
+                <td (click)="dlt_user(i)"><i class="fas fa-trash text-danger"></i></td>
+            </tr>
+
+
+
+        </tbody>
+
+    </table>
+    <button class="btn btn-success" (click)="save_info()">SaveInfo</button>&nbsp;
+    <button class="btn btn-primary" (click)="fetch_user()">FetchInfo</button>
+</div>

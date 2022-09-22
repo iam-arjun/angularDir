@@ -1,0 +1,67 @@
+<app-navbar></app-navbar>
+
+<section class="main_comp">
+  <div class="container products_area">
+
+    <h2 class="text-center text-uppercase text-primary">Choose your Products</h2>
+
+    <button class=" parent_cart btn btn-lg btn-warning">Add_to_cart</button>
+    <div *ngIf="display_added_product &&product_added  ">
+      <div class="checkout">
+        <h4 class="added_product">
+          {{product_added}} is added to cart!
+        </h4>
+        <button class=" checkout_btn  btn btn-info">
+          Checkout
+        </button>
+      </div>
+    </div>
+
+    <div class="row products">
+      <div class="col-lg-4 product_items">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="https://static.frame.work/d95hpc096mt5u4tirhfzzr5adg71" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title" #productName1>LAPTOP</h5>
+
+            <a class="btn btn-primary" (click)="add_product(productName1.innerText)">SELECT</a>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-lg-4 product_items">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top"
+            src="https://i.gadgets360cdn.com/products/large/motorola-edge-30-pro-657x800-1645713862.jpg"
+            alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title" #productName2>Mobile</h5>
+
+            <a class="btn btn-primary" (click)="add_product(productName2.innerText)">SELECT</a>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-lg-4 product_items">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top"
+            src="https://www.okdam.com/public/upload/product/extra/philips-32pha305271-32-inch-led-tv-black0355.jpg"
+            alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title" #productName3>Television</h5>
+
+            <a class="btn btn-primary" (click)="add_product(productName3.innerText)">SELECT</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <app-header (added_item)="parent_product($event)" [myname]="name" [my_product]="product_name"></app-header>
+
+  </div>
+
+
+</section>

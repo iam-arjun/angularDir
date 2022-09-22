@@ -1,0 +1,45 @@
+.user_contain {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+
+}
+
+#Username {
+    width: 50%;
+    display: inline;
+    margin-right: 5px;
+
+}
+
+.table_data {
+
+    width: 50%;
+
+
+
+}
+
+.table_data ul li {
+    list-style: none;
+    color: brown;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+
+}
+
+.spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.fa-edit{
+    cursor: pointer;
+}
+
+.fa-trash{
+    cursor:pointer;
+}

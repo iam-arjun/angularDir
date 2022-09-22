@@ -1,0 +1,23 @@
+/* font-family: 'Barlow', sans-serif;
+font-family: 'Fredoka', sans-serif; */
+label{
+    font-family: 'Barlow', sans-serif;
+    font-weight: 700;
+
+}
+.signup{
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 900;
+}
+.btn-warning{
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+    color:white;
+    
+}
+
+input.ng-invalid.ng-touched.ng-dirty{
+    border:2px solid red;
+border-radius: 5px;
+
+}

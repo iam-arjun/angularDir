@@ -1,0 +1,55 @@
+<section class="menu">
+    <div class=" container">
+        <nav class="navbar navbar-expand-lg  row">
+            <div class="col-lg-3 offset-lg-1 logo_name">
+                <a class="navbar-brand " href="#"><i class="fa-brands fa-pied-piper text-warning"></i>makeLogo</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="col-lg-5 offset-lg-1  navigation_items">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav  ">
+                        <li class="nav-item active">
+                            <a class="nav-link" routerLink="/">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/about">About</a>
+                        </li>
+                        <li class="nav-item" *ngIf="show_signup">
+                            <a class="nav-link" routerLink="/contact">SignUp</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/contact2">SignUp2</a>
+                        </li>
+
+                        <li class="nav-item" *ngIf="show_user && new_username!=''">
+                            <h5 class="username">Welcome <span class="text-primary">{{new_username}}</span></h5>
+
+                        </li>
+                        <li class="nav-item" *ngIf="show_contact">
+                            <h6 class="username">makeLogo <i class="text-primary">
+                                    makelogo@gmail.com
+                                </i></h6>
+
+                        </li>
+
+
+
+
+
+
+
+
+
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+    </div>
+</section>
